@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class AngularVelocity : MonoBehaviour
+public class NewMonoBehaviourScript : MonoBehaviour
 {
-    [SerializeField] float angularSpeed = 2.0f;
+
+    [SerializeField] float TorqueRotateSpeed = 2.0f;
     Rigidbody rb;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,17 +16,14 @@ public class AngularVelocity : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Keyboard.current.aKey.isPressed)
+        if (Keyboard.current.dKey.isPressed)
         {
-            rb.angularVelocity = new Vector3(0, angularSpeed, 0);
+            rb.AddTorque(Vector3.up * TorqueRotateSpeed);
         }
         else
         {
             rb.angularVelocity = Vector3.zero;
         }
     }
-
-
-
 
 }
