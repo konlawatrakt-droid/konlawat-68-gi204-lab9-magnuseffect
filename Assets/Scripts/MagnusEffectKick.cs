@@ -20,8 +20,10 @@ public class MagnusEffectKick : MonoBehaviour
     {
      if (Keyboard.current.spaceKey.wasPressedThisFrame && !isShot)
         {
-            rb.AddForce(Vector3.forward * kickForce,ForceMode.Impulse);
+            rb.AddForce(Vector3.forward * kickForce, ForceMode.Impulse);
+            
             rb.AddTorque(Vector3.up * spinAmout);
+           
             isShot = true;
         }
     }
