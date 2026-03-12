@@ -18,11 +18,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         if (Keyboard.current.dKey.isPressed)
         {
-            rb.AddTorque(Vector3.up * TorqueRotateSpeed);
-        }
-        else
-        {
-            rb.angularVelocity = Vector3.zero;
+            rb.AddTorque(Vector3.left * TorqueRotateSpeed);
         }
     }
 
